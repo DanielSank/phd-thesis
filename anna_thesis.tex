@@ -1,0 +1,404 @@
+\documentclass[12pt]{ucthesis}
+%\documentclass[12pt,twoside]{ucthesis}  % Makes a two-sided document (so that the binding margin is always 1.5 inches)
+\usepackage{lscape}
+\usepackage{aecompl}
+
+%\usepackage[paperwidth=8.5in, paperheight=11in, top=1.25in, bottom=1.25in, left=1.5in, right=1.25in, footskip=0.5in]{geometry}
+%\usepackage[paperwidth=8.5in, paperheight=11in, top=1.22in, bottom=1.28in, left=1.62in, right=1.15in, footskip=0.5in]{geometry}
+\usepackage[paperwidth=8.5in, paperheight=11in, top=1in, bottom=1in, left=1.25in, right=1in, footskip=0.5in]{geometry}
+%\usepackage{multicol,threeparttable}
+%\usepackage{hyperref}
+
+\usepackage{graphicx}
+%\usepackage{epstopdf}
+\usepackage{amsmath}   % AMS Math Package
+\usepackage{amsthm}    % Theorem Formatting
+\usepackage{amssymb}   % Math symbols such as \mathbb
+\usepackage{graphicx}  % Allows for eps images
+\usepackage{bm}
+%\begin{document}
+%\usepackage{rotating}
+%\usepackage{graphicx}
+%\graphicspath{{./images/}}
+%\input{deluxetable.sty}
+
+\newcommand{\commentout}[1]{}
+\def\figwd{.49\columnwidth}
+\newcommand{\figimg}[3][\figwd]{\parbox{#1}{\centering \ifx&#2&{}\else{#2.\\}\fi\includegraphics[width={#1}]{#3} }}
+\newcommand{\figtxt}[2][\figwd]{\parbox{#1}{#2}}
+\def\nodata{...}
+\def\fcp{FCP}
+
+\usepackage{natbib}
+\bibpunct{(}{)}{;}{}{}{,}
+\def\newblock{\hskip .11em plus .33em minus .07em}
+\def\citeapos#1{\citeauthor{#1}'s (\citeyear{#1})}
+
+\newcommand{\paperone}{Chapter \ref{chap:GOODS}}
+\newcommand{\rtwo}{R_{200}}
+%\newcommand{\mi}{I_{814W}}
+
+
+
+%For bibtex commands
+\newcommand{\aaps}{A\&AS}
+
+\newcommand{\apj}{\rm ApJ}
+\newcommand{\apjl}{\rm ApJ}
+\newcommand{\apjs}{\rm ApJS}
+\newcommand{\aap}{\rm A\&A}
+\newcommand{\mnras}{\rm MNRAS}
+\newcommand{\pasp}{\rm PASP}
+\newcommand{\aj}{\rm AJ}
+\newcommand{\araa}{\rm ARA\&A}
+\newcommand{\pasj}{\rm PASJ}
+\newcommand{\apss}{\rm Ap\&SS}
+\newcommand{\pra}{\rm Phys. Rev. A}
+\newcommand{\physrep}{\rm Phys. Rep.}
+\newcommand{\nat}{\rm Nature}
+\newcommand{\iaucirc}{\rm IAU Circ.}
+\newcommand{\nar}{NAR}
+
+\newcommand{\farcs}{\mbox{\ensuremath{.\!\!^{\prime\prime}}}}
+
+
+\input{macros.tex}
+
+
+
+\usepackage{fancyhdr}
+\pagestyle{fancy} 
+%\lhead{\slshape \leftmark} 
+\lhead{}
+\chead{} 
+\rhead{} 
+\lfoot{} 
+\cfoot{\thepage} 
+\rfoot{}
+\renewcommand{\headrulewidth}{0.0pt} 
+\renewcommand{\footrulewidth}{0.0pt}
+
+\makeatletter 
+\DeclareRobustCommand\onlinecite{\@onlinecite} 
+\def\@onlinecite#1{\begingroup\let\@cite\NAT@citenum\citealp{#1}\endgroup} 
+\makeatother 
+
+\def\dsp{\def\baselinestretch{2.0}\large\normalsize}
+\dsp
+
+
+\def\Msun{\rm{M}_\odot}
+\def\Mstar{\rm{M}_*}
+%\def\Mstar{\rm{M}_*}
+
+\long\def\symbolfootnote[#1]#2{\begingroup%
+\def\thefootnote{\fnsymbol{footnote}}\footnote[#1]{#2}\endgroup}
+
+% --------------------------------------------------------------------------------------------------
+% --------------------------------------------------------------------------------------------------
+
+\begin{document}
+
+% --------------------------------------------------------------------------------------------------
+% --------------------------------------------------------------------------------------------------
+
+% Declarations for Front Matter
+
+\title{Testing galaxy formation and the nature of dark matter with satellite galaxies}
+\author{Anna Mercedes Nierenberg}
+\degreemonth{September}
+\degreeyear{2014}
+\degree{Doctor of Philosophy}
+\chair{Professor Tommaso Treu}
+\committeeone{Professor Crystal Martin}
+\committeetwo{Professor Peng Oh}
+\othermembers{Professor Crystal Martin\\
+Professor Peng Oh}
+\numberofmembers{3}
+\prevdegrees{}
+\field{Physics}
+\campus{Santa Barbara}
+
+\approvalmonth{September}
+\approvalyear{2014}
+
+
+\begin{frontmatter} %(lowercase roman page numbers)
+
+% --------------------------------------------------------------------------------------------------
+% --------------------------------------------------------------------------------------------------
+
+%%Main Cover Page/Title Page
+\maketitle
+
+% --------------------------------------------------------------------------------------------------
+% --------------------------------------------------------------------------------------------------
+
+%%Approval/Signature Page
+\approvalpage
+
+% --------------------------------------------------------------------------------------------------
+% --------------------------------------------------------------------------------------------------
+
+%%Title/Copyright Page
+\copyrightpage
+
+% --------------------------------------------------------------------------------------------------
+% --------------------------------------------------------------------------------------------------
+
+%Dedication
+\begin{dedication}
+\null\vfil {
+\begin{center}
+
+To my parents; it really is a wonderful world.
+
+
+%To my father, my exemplar, for sharing with me all the joy he ``could never have imagined.'' Here's
+%to the future and its unimaginable blessings.
+\end{center}}
+\vfil\null
+\end{dedication}
+
+% --------------------------------------------------------------------------------------------------
+% --------------------------------------------------------------------------------------------------
+
+%%Acknowledgements
+%\commentout{
+\begin{acknowledgements}
+
+
+It has been a long road getting here, and there are a lot of people to whom I owe this achievement. To my parents, thank you for your selfless and limitless love, support and encouragement. You taught me to never settle, to honor hard work in myself and others and to take time to enjoy life. You are both always on my team no matter what, and I am so grateful for that.
+
+To my brother Will, you are such a good friend. Growing up with you has made me a better person. I love and admire you so much and am so grateful to have you in my life. Thank you for helping me learn to ask for what I want, and to be less afraid! Also, thank you for sharing my passionate dislike for orange chocolate, which validates how I feel.
+
+To my grandparents: Nanny I will always treasure how you nurtured my artistic side by drawing and painting with me when I was little. I learned so much from you about how to brighten life with colors. Moosie and Bobo I am truly blessed to know you and see how your love touches so many lives and makes the world a more beautiful place. I am grateful for the example of your marriage, how you have grown closer and closer together, over so many years, and for showing me how important it is in life to have a strong and loving family. And to Grandpa Bill, I am so honored by your example. You couldn't make it to my thesis defense, but I know you've been with me every step of the way.
+
+I am grateful to the many teachers in my life. In particular, thank you to Professor Creswell, who taught my high school calculus class. You are a dedicated and gifted teacher who made calculus easy, approachable and interesting. Also thank you to Professor Coroniti, my first college physics professor who gave me lots of encouragement.
+
+In graduate school, I am indebted to my cohort, whose moral support and homework collaboration made first year possible, physically and psychologically. I am also grateful to my fellow astronomy graduate students, I will miss you guys, especially at lunch. And to the other two members of the `A-Team', I look forward to a future of partnership and collaboration! Don't take my head off the map please... at least for a little while. 
+
+Thank you to the more senior students and post-docs, who have supported and advised me. I knew I could count on you any time and I am glad I had such positive role models to light the road ahead.
+
+Of course, none of this would have been possible without my wonderful advisor, Tommaso. I literally couldn't have imagined a better advisor, and I am a pretty creative person. Thank you for your endless patience, encouragement, and for all the opportunities I've had in my graduate career. You have taught me not only about science but also how to be a scientist. I am still a long way from achieving zen mastery, but thanks to you I have seen how it's possible for a person to care a lot about something but still react calmly in the face of the randomness of life. As an unexpected bonus, in the six years of finishing this dissertation, I have learned WAY more about food than I ever expected to. I look forward to much continued collaboration, and many delicious meals in the coming years.
+
+Finally, to Daniel, I am so glad I got to share this experience with you. It has been a long six years and you've been with me every step of the way, with hugs when I'm down and dancing when I'm up!
+
+%\vspace{1in}
+
+%\hspace{3.5in} Kenneth B. Henisey
+
+%\hspace{3.5in} July 2011
+
+\end{acknowledgements}
+
+% --------------------------------------------------------------------------------------------------
+% --------------------------------------------------------------------------------------------------
+
+\newpage
+
+\begin{center}
+{\bf \large Curriculum Vitae}\\
+{\large Anna Mercedes Nierenberg}
+\mbox{ } \\
+\end{center}
+\begin{flushleft}
+
+{\bf Education}
+\smallskip
+\begin{tabular}{@{}p{1in}@{}p{4.6in}}
+2014 & Ph.D.\ in Physics, University of California, Santa Barbara \\
+2008 & B.S.\ in Physics, University of California, Los Angeles, \emph{summa cum laude} \\
+\end{tabular}
+
+\mbox{ } \\
+
+{\bf Professional Experience}
+\smallskip
+\begin{tabular}{@{}p{1in}@{}p{4.6in}}
+2009-2014 & Graduate Research Assistant, Department of Physics, University of California, Santa Barbara \\
+2008-2009 & Teaching Associate, University of California, Santa Barbara \\
+2007-2008 & Undergraduate student researcher, University of California, Los Angeles \\
+Summer 2007 & Undergraduate student researcher, Scripps Institution of Oceanography \\
+
+\end{tabular}
+
+\mbox{ } \\
+
+{\bf First Author Publications}
+
+\begin{tabular}{@{}p{5.6in}}
+%\setlength{\hangindent}{0.2in}
+\smallskip
+``Detection of substructure with adaptive optics integral field spectroscopy of the gravitational lens B1422+231'', Nierenberg, ~A.~M.; Treu, ~T.; Wright, ~S.~A.; Fassnacht, ~C.~D.; Auger, ~M. ~W.; 2014, MNRAS 43, 2120 (2014) \\
+\smallskip
+
+``Do lens galaxies have an excess of luminous substructure?'', Nierenberg,~A.~M.; Oldenburg,~D.; Treu,~T.; MNRAS, 436, 2120 (2013) \\
+\smallskip
+
+``The Cosmic Evolution of Faint Satellite Galaxies as a Test of Galaxy Formation and the Nature of Dark Matter'', Nierenberg,~A.~M.; Treu,~T.; Menci,~N.; Lu, ~Y.; Wang, ~W.; ApJ, 772, 146, (2013) \\
+\smallskip
+
+``Luminous Satellites of Early-Type Galaxies II: Spatial Distribution, Luminosity Function and Cosmic Evolution'', Nierenberg,~A.~M.; Auger, M. W.; Treu,~T.; Marshall, ~P.~J.; Fassnacht, ~C.~D.; Busha, ~M. ~T; ApJ 752, 99, (2012) \\
+\smallskip
+
+``Luminous Satellites of Early-Type Galaxies I: Spatial Distribution'', Nierenberg, ~A. ~M.; Auger, ~M.~W.; Treu, ~T.; Marshall, ~P.~J.; Fassnacht, ~C. ~D.; ApJ 731, 44, (2011)
+\end{tabular}
+
+\mbox{ } \\
+
+\clearpage
+{\bf Fellowships and Awards}
+\smallskip
+\begin{tabular}{@{}p{1in}@{}p{4.6in}}
+2014-2017 & CCAPP Postdoctoral Fellow, Ohio State University \\
+2012-2013 & Dean's Fellowship, University of California, Santa Barbara \\
+Summer 2012 & Worster Undergraduate Research Fellowship, University of California, Santa Barbara \\
+Spring 2012 & Physics Chair's Fellowship, University of California, Santa Barbara \\
+\end{tabular}
+
+\mbox{ } \\
+
+{\bf Grants}
+\smallskip
+\begin{tabular}{@{}p{1in}@{}p{4.6in}}
+2014 & {\bf HST-GO-13732}: Detecting dark matter substructure with narrow line lensing (tbd, PI) \\
+2013 & {\bf HST-AR-13271}: The cosmic evolution of faint satellites as a test of galaxy formation and the nature of dark matter (\$59,784, co-PI) \\
+
+\end{tabular}
+
+
+\end{flushleft}
+
+% --------------------------------------------------------------------------------------------------
+% --------------------------------------------------------------------------------------------------
+
+\begin{abstract}
+
+The abundance of low mass halos is one of the key predictions of $\Lambda$ CDM, which remains at apparent odds with observations of luminous structure. We present new measurements of the spatial distribution and the cumulative luminosity function of satellite galaxies up to a thousand times fainter than their hosts, as a function of host stellar mass and morphology between redshifts 0.1 and 0.8, using imaging from the COSMOS and GOODS fields in conjunction with a rigorous statistical analysis.  We demonstrate how these measurements provide powerful new constraints for abundance matching and cosmological simulations in the context of both warm and cold dark matter, and how future measurements of faint satellite colors using CANDELS, will provide important distinguishing power between warm and cold dark matter models. In addition,  we present results from a complementary gravitational lens modeling project in which we use strongly lensed AGN narrow-line emission in order to detect dark matter subhalos, demonstrating a promising new method for measuring the subhalo mass function in thousands of lensed systems which will be discovered in ongoing and future optical surveys.
+
+\end{abstract}
+
+% --------------------------------------------------------------------------------------------------
+% --------------------------------------------------------------------------------------------------
+
+\tableofcontents
+%\listoffigures
+%\listoftables
+
+\end{frontmatter}
+
+% --------------------------------------------------------------------------------------------------
+% --------------------------------------------------------------------------------------------------
+%\ssp
+
+\input{Introduction.tex}
+%\chapter{Introduction: $\Lambda$CDM and satellite galaxies}
+
+%\section{Observations of satellite galaxies}
+
+
+\input{goods.tex}
+%\chapter{Luminous satellites I: Determining the number and spatial distribution in a Bayesian framework}
+%\label{chap:GOODS}
+
+
+\input{Cosmos.tex}
+%\chapter{Luminous satellites II: Cosmic evolution and dependence on host properties of the satellite luminosity function and spatial distribution}
+
+\input{wdm.tex}
+%\chapter{ Luminous satellites III: Comparison of the luminosity function with theoretical predictions}
+%\label{chap:wdm}
+
+
+%\chapter{The luminous satellites of gravitational lenses}
+%\label{chap:lensSats}
+\input{lensSats.tex}
+
+%\chapter{Detection of dark matter halos with strong lensing of narrow-line emission}
+%\label{chap:1422}
+\input{1422.tex}
+
+%\chapter{Conclusions and future directions}
+%\label{chap:future}
+\input{future.tex}
+
+%\chapter{Summary of Main Results}
+%\label{chap:summary}
+
+
+
+
+
+
+%\begin{figure*}
+%\centering
+%\begin{tabular*}{\columnwidth}{@{\extracolsep{\fill}}*{2}{@{}b{\figwd}}@{}}
+%\figimg{a}{fP_primary_a.pdf} &
+%\figimg{b}{fP_primary_d.pdf} \\
+%\multicolumn{2}{c}{\centering \figimg{}{colorbar.pdf}}
+%\end{tabular*}
+%\caption[Shell averaged power spectra of density, radial velocity, and polar velocity for the 90h
+%  untilted simulation and the 915h tilted simulation.]
+% {Shell averaged power spectra of density $fP_\rho$ (top), radial velocity $fP_{v^r}$ (middle),
+%  and polar velocity $fP_{v^\theta}$ (bottom) as functions of frequency $f$ and coordinate radius $r$
+%  (cf.\ equations~\ref{eq:pds_norm} for the definition of $P_\rho$, $P_{v^\theta}$, and $P_{v^\phi}$
+%  and figures~\ref{fig:norm_r} and \ref{fig:cs_norm_r} for their normalizations) from the untilted
+%  90h (a) and the tilted 915h datasets (b). Overplots include the orbital frequency (solid) and its
+%  harmonics (dotted), the geodesic radial epicyclic frequency and the ISCO radius (dashed), and the
+%  geodesic vertical epicyclic frequency (triple-dot dashed).
+%  \label{fig:fp_primary}}
+%\end{figure*}
+
+
+
+%\begin{table}
+%  \centering
+%  \begin{threeparttable}
+%    \caption[Power fraction per orthogonal mode component at selected frequencies.]
+%      {Power fraction per component mode\tnote{a}}
+%    \begin{tabular*}{.98\columnwidth}{@{\extracolsep{\fill}}lcrrrrrr}
+%      \hline\hline
+%      & & \multicolumn{2}{c}{$m=0$} & \multicolumn{2}{c}{$m=1$} & \multicolumn{2}{c}{$m=2$} \\[-12pt]
+%      Dataset & Frequency & Even & Odd & Even & Odd & Even & Odd \\
+%     \hline
+%     90h      & 110\Hz & 2.3\% &      1.5\% & \bf 37.1\%\tnote{b} & 8.8\% & \bf 17.7\% & \bf 13.0\% \\
+%      \hline
+%    \end{tabular*}
+%    \begin{tablenotes}
+%      \item[a]{The power at specified frequencies in each of six orthogonal
+%        components radially integrated inside of $15\RG$ and displayed as a percentage of the
+%        total power similarly integrated and at the same frequency.}
+%      \item[b]{Bold face values indicate those components shown at each frequency in
+%        figure~\ref{fig:mode_proj}.}
+%    \end{tablenotes}
+%  \end{threeparttable}
+%  \label{tab:mode_proj}
+%\end{table}
+
+
+%\appendix
+
+%\chapter{Fourier analysis and visualization}\label{app:}
+
+%\section{Spatial decomposition}
+
+%\section{Visualization}
+
+% --------------------------------------------------------------------------------------------------
+% --------------------------------------------------------------------------------------------------
+
+
+\clearpage
+\ssp  % bibliography can be single-spaced for UC thesis format
+\addcontentsline{toc}{chapter}{Bibliography}
+
+% Not quite sure how to do anything but ApJ style...
+%\bibliographystyle{unsrt}
+\bibliographystyle{apj}
+\bibliography{references}
+
+% --------------------------------------------------------------------------------------------------
+% --------------------------------------------------------------------------------------------------
+
+\end{document}

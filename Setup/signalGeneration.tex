@@ -1,0 +1,12 @@
+\section{Signal generation} \label{section:signalGeneration}
+
+The measurement signals were produced by a custom FPGA controlled 1\,Gs/s arbitrary waveform generator (AWG).
+The two channels of the AWG drove the I and Q ports of a Marki IQ mixer.
+With a cosine signal $\cos \left( \delta \omega t + \phi \right)$ on the I channel, and $\sin \left( \delta \omega t + \phi \right)$ on the Q channel, the radio frequency (RF) signal leaving the RF port of the mixer is \begin{equation}
+\cos\left( \left[ \omega_c + \delta\omega \right]t + \phi \right) \end{equation}
+where $\omega_c$ is the carrier frequency at several GHz (see Appendix \ref{appendix:IQMixer}).
+We probe multiple measurement resonators simultaneously by superimposing IQ sinusoids to generate a signal with multiple frequency components.
+The 1\,Gs/s AWG has a usable bandwidth of 500\,MHz due to the Nyquist criterion.
+Combined with the IQ mixer, this allows for a usable RF bandwidth of $\Delta\omega/2\pi = 1\,\text{GHz}$ centered around $\omega_c$.
+In practice, the AWG outputs are filtered by absorptive Gaussian low pass filters to remove harmonic created by the shape of the AWG digital samples.
+This limits the usable bandwidth to $\Delta\omega/2\pi \approx 600\,\text{MHz}$.

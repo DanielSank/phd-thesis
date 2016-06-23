@@ -1,0 +1,15 @@
+\chapter{Bandpass Filter} \label{ch:bandpassFilter}
+
+In this chapter, we introduce and analyze a bandpass filter for dispersive qubit measurement.
+First, we explain the rationale for the bandpass filter and compare it qualitatively to existing systems.
+Next, we quantitatively analyze the bandpass filter, arriving at a relation between the response time of the filtered measurement system and the coherence of the qubit.
+The analysis is corroborated with numerics.
+We then use the results of the analysis to choose circuit parameters.
+We then determine the physical geometry of the hardware elements needed to achieve the desired circuit parameters.
+Finally, we describe the fabrication steps used to build the device.
+
+\input{rationale}
+\subinputfrom{../../Theory/DispersiveReadout/purcell/derivation-2/}{analysis}
+\subinputfrom{../../Theory/DispersiveReadout/purcell/}{numerics}
+\subinputfrom{./}{circuitParameters}
+\subinputfrom{./}{device}

@@ -1,0 +1,9 @@
+Christina Knapp
+P.S. I found your thesis very helpful!  I think there is a minor typo on page 70- I think you want \delta y = \pm \chi/\omega_r (right now you have \delta y=\pm \chi, but later you write \delta y =\pm 1/2Q_l so the units don't match up).
+
+Greg Calusine
+Section 5.2 and 5.5 are repeats in the version I got from your group's website.
+On page 181, I think there is a type on the first line (there is an omega - omega)...I think the first one is supposed to be capital omega.
+
+The 'dielectric crossover' phrase confused me because that was the first use of that phrase.  You do state in your process summary that you cover that with aluminum.  I think maybe I just skimmed your process after reading the text and missed that and ended up confused.
+

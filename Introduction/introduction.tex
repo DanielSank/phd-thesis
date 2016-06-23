@@ -1,0 +1,34 @@
+\documentclass{report}
+
+%Packages
+%\usepackage{standalone} %Allows inclusion of other self-contained TeX documents
+\usepackage{amstext}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{standalone}
+\usepackage{import}
+\usepackage{appendix}
+\usepackage{lscape}
+
+
+\usepackage[letterpaper]{geometry}
+
+\author{Daniel Sank}
+\pagestyle{headings}
+\title{Introduction \\
+\copyright 2013}
+
+%Some extra stuff to use in the document
+\providecommand{\bra}[1]{\langle #1|}
+\providecommand{\ket}[1]{|#1\rangle}
+\providecommand{\braket}[2]{\langle #1|#2\rangle}
+\providecommand{\norm}[1]{\| #1\|}
+
+\begin{document} %Begin zee document!
+
+\input{introduction-content}
+
+\bibliographystyle{plain}
+\bibliography{../../Theory/Bibliography/references-main,../references-local}
+
+\end{document}

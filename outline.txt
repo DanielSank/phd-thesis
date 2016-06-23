@@ -1,0 +1,33 @@
+Prior summary - How to measure the state of a qubit fast?
+    Energy?
+        No single photon detector
+        "Always on" energy emission channel would lead to low T1
+    Impedance
+        Can use another frequency "dispersive"
+            Probe impedance off resonance from qubit. Get state dependent phase shift
+            Add linear mode to separate frequencies, "filter"
+        Yale design
+            Worked
+            Awkward for multiple qubits
+                One resonator -> one frequency for N qubits
+                Have to distinguish 2**N posibilities in one IQ plane
+        Our first design
+            Frequency multiplexed
+            Only distinguish 2 possibilities per IQ plane
+            Minimal crosstalk by one resonator per channel
+            Problems
+                Leaking energy out the wrong port
+                Can't beat Purcell limit
+                    \kappa_r^2 T1 \propto eta.
+                    For fixed T1 you can't change kappa
+        Yale Purcell filter
+            Fixed T1
+            Still in unscalable system
+            Appears to be very slow but not discussed in published work
+            Other papers ignore this issue
+                Siddiqi Dressed dephasing, Heralding had very low coherence
+        Our filter
+            One filter, but many measurement resonators
+            Bandpass means all qubits are protected
+            Design means very low on chip area. Important for larger system
+            

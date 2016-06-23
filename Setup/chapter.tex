@@ -1,0 +1,31 @@
+\documentclass{report}
+
+%Packages
+\usepackage{amstext}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{import}
+
+\usepackage[letterpaper]{geometry}
+
+\author{Daniel Sank}
+\pagestyle{headings}
+\title{Experimental Setup \\
+\copyright 2014}
+
+%Some extra stuff to use in the document
+\providecommand{\bra}[1]{\langle #1|}
+\providecommand{\ket}[1]{|#1\rangle}
+\providecommand{\braket}[2]{\langle #1|#2\rangle}
+\providecommand{\norm}[1]{\| #1\|}
+
+\begin{document} %Begin zee document!
+
+\maketitle
+
+\input{content}
+
+\bibliographystyle{plain}
+\bibliography{../references-local,../../Theory/Bibliography/references-main}
+
+\end{document}

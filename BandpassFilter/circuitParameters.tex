@@ -1,0 +1,41 @@
+\section{Circuit parameters}
+
+From our analysis of the qubit damping imposed by the readout circuit in the previous section, and from our analysis of the scattering parameters in Ch.\,\ref{ch:DispersiveMeasurement} we can now choose parameters for the device.
+From Fig.\,\ref{Fig:purcellTheoryVsNumerical} we find that resonators quality factors of $Q_r \in [500, 1000, 1500, 3000]$ should give well preserved qubit $T_1$ for $\left| \Delta \right| \gtrsim 1\,\text{GHz}$.
+Each $Q_r$ corresponds to $\kappa_r = \omega_r / Q_r$.
+For each $Q_r$ the value of $\chi$ required for a large IQ plane separation between $\ket{0}$ and $\ket{1}$ is determined according to \begin{equation}
+\chi = \omega_r / 2Q_r \end{equation}
+(see Eq.\,(\ref{eq:chiVsKappa_r})).
+The qubit-resonator coupling strength $g$ is then determined from Eq.\,(\ref{eq:dispersiveHamiltonianChi}) \begin{equation}
+g = \sqrt{- \chi \Delta \left(1 + \left(\Delta/\eta \right) \right)} \end{equation}
+where $\eta/2\pi \equiv \left( \omega_{21} - \omega_{10} \right) / 2 \pi \approx -200\,\text{MHz}$ is the anharmonicity of the qubit.
+In order to actually build a device with the specified $\chi$, $g$, and $\kappa_r$, we need to know the values of $C_g$ and $C_{\kappa}$.
+From Appendix \ref{appendix:qubitTheory} we have \begin{equation}
+C_g = 2 g \sqrt{\frac{C_r C_q}{\omega_r \omega_q}} \label{eq:C_gVsg} \end{equation} 
+where $C_q=85\,\text{fF}$ is the qubit capacitance and $C_r = \pi / 4 \omega_r Z_0$ is the effective capacitance of the measurement resonator.
+The value of $C_{\kappa}$ is determined by rearranging Eq.\,(\ref{eq:Q_r}) as \begin{equation}
+C_{\kappa} = \sqrt{\frac{C_r}{\omega_r Q_F Q_r Z_F^0}} \end{equation}
+where $Z_F = 4Z_0/\pi$ is the effective capacitance of the filter resonator.
+
+Using these design equations we found four sets of parameters as shown in Table\,\ref{Table:circuitParameters}.
+The value of $\kappa_r$ was varied to test the relation between measurement speed and the measurement circuit imposed limit on qubit $T_1$.
+
+\begin{landscape}
+\begin{table} \begin{center} \begin{tabular}{  c  c  c  c  c  c  c  c  }
+\hline \hline
+  & \quad $\omega_r/2\pi\,$[GHz] & \quad $Q_r$ & \quad $\kappa_r^{-1}\,$[ns] & \quad $\chi/2\pi\,$[MHz] & \quad $g/2\pi\,$[MHz] & \quad $C_g\,$[fF] & \quad $C_{\kappa}\,$[fF] \\
+\hline
+Qubit 1 & \quad	6.805            & \quad 500   & \quad 12                    & \quad 6.8                & \quad 157             & \quad 8.7         & \quad 3.0 \\
+\hline
+Qubit 2 & \quad	6.765            & \quad 1000  & \quad 23                    & \quad 3.4                & \quad 105             & \quad 5.9         & \quad 2.1 \\
+\hline
+Qubit 3 & \quad	6.735            & \quad 1500  & \quad 35                    & \quad 2.2                & \quad 83              & \quad 4.6         & \quad 1.7 \\
+\hline
+Qubit 4 & \quad	6.705            & \quad 3000  & \quad 71                    & \quad 1.1                & \quad 56              & \quad 3.2         & \quad 1.2 \\
+\hline \hline
+\end{tabular}
+\end{center}
+\caption{Coupling parameters and circuit element parameters for four qubits.}
+\label{Table:circuitParameters}
+\end{table}
+\end{landscape}

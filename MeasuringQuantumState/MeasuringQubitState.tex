@@ -1,0 +1,28 @@
+\documentclass{report}
+
+%Packages
+%\usepackage{standalone} %Allows inclusion of other self-contained TeX documents
+\usepackage{graphicx}
+\usepackage{amstext}
+\usepackage{amssymb}
+
+\title{Measuring a Qubit's State \\
+\copyright 2014}
+
+\author{Daniel Sank}
+\pagestyle{headings}
+
+%Some extra stuff to use in the document
+\providecommand{\bra}[1]{\langle #1|}
+\providecommand{\ket}[1]{|#1\rangle}
+\providecommand{\braket}[2]{\langle #1|#2\rangle}
+\providecommand{\norm}[1]{\| #1\|}
+
+\begin{document} %Begin zee document!
+
+\input{MeasuringQubitState-content.tex}
+
+\bibliographystyle{plain}
+\bibliography{../references}
+
+\end{document}

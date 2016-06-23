@@ -1,0 +1,119 @@
+\documentclass{report}
+
+%Packages
+%\usepackage{standalone} %Allows inclusion of other self-contained TeX documents
+\usepackage{graphicx}
+\usepackage{import}
+\usepackage{amssymb}
+
+\author{Daniel Sank}
+\pagestyle{headings}
+\title{Introduction \\
+\copyright 2013}
+
+%Some extra stuff to use in the document
+\providecommand{\bra}[1]{\langle #1|}
+\providecommand{\ket}[1]{|#1\rangle}
+\providecommand{\braket}[2]{\langle #1|#2\rangle}
+\providecommand{\norm}[1]{\| #1\|}
+
+\begin{document} %Begin zee document!
+
+\chapter{Introduction}
+This introduction describes the entire project and its place in the field of superconducting qubits and quantum computation as a whole. Its purpose is to give the reader an expectation for what will be described in technical detail in the rest of the thesis so that the relevance of those details is easily understood.
+
+\section{Information processing machines}
+
+\subsection{Information is physical}
+\begin{enumerate}
+\item We spend enormous effort and resources improving our information processing hardware.
+\item Information exists as an array of two state physical elements (bits).
+\item Information is processed through controlled interactions of bits: XOR, adder, etc.
+\end{enumerate}
+
+\subsection{Classical physics limits information processing}
+\begin{enumerate}
+\item We ignore a lot of information in our system. Current carrying electrons jiggling around, interacting with phonons (heat).
+\item By ignoring information we use only the emergent classical properties to carry and process information.
+\item Formally, in all existing technology, the information is classical, meaning that you can specify the state of the computer as \begin{displaymath}
+\ket{\textrm{state of bit 0}} \ket{\textrm{state of bit 1}} \ldots \ket{\textrm{state of bit N-1}} \end{displaymath}
+\item Quantum example - spin chain: can't store state efficiently.
+\item Classical example - factoring into prime numbers. Inefficient in time.
+\item These limitations may not be intrinsic. We don't know.
+\end{enumerate} 
+
+\subsection{Quantum information}
+\begin{enumerate}
+\item Use an information processor in which the bits themselves are quantum.
+\item Make a chain of controlled 2-level systems and observe it. ``Physical analogue'' of the thing we want to understand.
+\item Use quantum system as quantum bit register for arbitrary system modeling.
+\item Moving beyond simulation of quantum system, this idea has been proved to efficiently solve the prime factoring problem!
+\end{enumerate}
+\subsection{Summary}
+
+\section{Quantum bits}
+Want to make use a quantum mechanical physical system as an information storage/processing device. First explain why this is hard, then present list of requirements, then present candidates.
+
+\subsection{Quantum coherence is fragile}
+\begin{enumerate}
+\item Illustration of decoherence
+\item Description of $T_1$, $T_2$
+\end{enumerate}
+
+\subsection{Requirements for qubits}
+\begin{enumerate}
+\item List criteria - DiVencenzo
+\item Explain tension between coherence and control
+\item Note that coherence is needed to achieve error correction, not full algorithm
+\end{enumerate}
+
+\subsection{Candidate systems}
+\begin{enumerate}
+\item  Electron spin. Intrinsically two levels. Difficult to keep in one place. Work done where they're stuck in a solid. Lots of problems from environment. Hard to engineer parameters.
+\item Electron transition in an atom. Use ions so that the atoms can be kept still with electromagnetic traps. This has challenges:
+
+	\begin{enumerate}
+	\item Weak intrinsic coupling. Use strong lasers to compensate.
+	\item Laser tech. is space intensive and not supported by consumer industry
+	\item Requires Hi-vac
+	\item How to build large scale system? Cannot miniaturize laser systems. Addressing individual ions very hard. Beyond 1D requires chip+laser.
+	\end{enumerate}
+\item A generic 1D system, like particle in a square potential. Levels are not equally spaced so having more than two states is ok.
+\end{enumerate}
+
+\section{Superconducting Qubits}
+
+\subsection{What they are}
+\begin{enumerate}
+\item Need more electrons for stronger interaction, but can't have scattering.
+\item Superconducting condensate!
+\item Like an electronic computer but use superconductor to eliminate phonon scattering
+\item NO excitations possible until superconducting gap
+\item Circuit mode is low frequency collective degree of freedom used for qubit
+\item Anharmonicity from Josephson junction
+\end{enumerate}
+
+\subsection{Advantages}
+\begin{enumerate}
+\item Parameters do not directly depend on constants of nature.
+\item GHz frequency and electronic coupling allows use of commercial hardware. Pulse generation not too hard. Sources very stable. Huge dynamics range.
+\item 2D connectivity for free based on known lithographic techniques
+\item 6 GHz frequency corresponds to $T=288\,\textrm{mK}$. Dilution fridge ok. Also below $T_c$ of eg. aluminum.
+\item Coupling determined by shared $C$: $g =\frac{1}{2}\hbar \sqrt{\omega_1 \omega_2} \frac{\sqrt{C_1 C_2}}{C_g}$ This is what all of the other techniques lack.
+\item Anharmonic superconducting $L$ exists. Allows two level system control.
+\item Easy to make
+ \begin{enumerate}
+ \item Make 100 chips at a time
+ \item Two days to make device
+ \item Inspect optically
+ \item Deterministic qubits in desired coupling arrangement
+ \end{enumerate}
+\item Transmon qubit
+ \begin{enumerate}
+ \item Circuit diagram
+ \item Potential diagram
+ \item Hamiltonian with explanation of terms, kinetic, potential energy
+ \end{enumerate}
+\end{enumerate}
+
+\end{document}

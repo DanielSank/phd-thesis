@@ -1,0 +1,18 @@
+\section{Signal detection} \label{signalDetection}
+
+The dispersed frequency components coming from the chip and subsequent amplifiers are, like the drive signal, of the form \begin{equation}
+s(t) = \cos \left[ \left(\omega_c + \delta \omega \right) t + \phi \right] , \end{equation}
+where $\omega_c$ is the frequency of the carrier, $\delta \omega$ is detuning of the measurement signal from the carrier, and $\phi$ is the phase of the signal which includes the phase shift caused by dispersion from the measurement resonator.
+As shown in Appendix \ref{appendix:IQMixer}, after demodulation, the I and Q signals are \begin{equation}
+I(t) = \cos\left(\delta\omega t + \phi \right) , \qquad Q(t) = \sin\left(\delta\omega t + \phi \right) . \end{equation}
+These low frequency signals were digitized by the ADC to \begin{equation}
+I_n = \cos\left(\delta\omega t_n + \phi \right) , \qquad Q_n = \sin\left(\delta\omega t_n + \phi \right) . \end{equation}
+where $t_n = n / f_s $ and $f_s = 1/500\,\text{ns}$ is the sampling frequency of the ADC.\footnote{The sampling frequency is 1\,GHz, but time-adjacent samples are summed together in the FPGA to use less resources in the following processing stages.}
+The sampled signals $I_n$ and $Q_n$ are treated as the real and imaginary parts of a complex number \begin{equation}
+z_n \equiv I_n + iQ_n = \exp \left( i \left[ \delta \omega t_n + \phi \right] \right). \end{equation}
+The complex signal $z_n$ is multiplied by $\exp \left(-i \delta \omega t_n \right)$ to produce \begin{equation}
+z_n' \equiv z_n \exp \left( -i\delta\omega t_n \right) = \exp\left( i\phi \right) . \end{equation}
+Finally, $z_n'$ is integrated over the duration of the pulse.
+The integration acts as a low pass filter, which increases the signal to noise ratio.
+The end result is a single point in the two-dimensional plane, whose phase is the same (up to constant rotations coming from digital and analog time delays) as the phase of the original analog signal.
+In this way, the phase of the dispersed signal is measured and the corresponding qubit state inferred.
